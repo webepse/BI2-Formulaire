@@ -21,8 +21,29 @@
             <input type="date" id="date" name="date">
         </div>
         <div>
+            <label for="pays">Pays: </label>
+            <select name="pays" id="pays">
+                <option value="BE">Belgique</option>
+                <option value="FR">France</option>
+                <option value="IT">Italie</option>
+                <option value="ES">Espagne</option>
+            </select>
+        </div>
+        <div>
+            <label for="com">Commentaire: </label>
+            <textarea name="com" id="com" cols="30" rows="10"></textarea>
+        </div>
+        <div>
             <input type="submit" value="envoyer">
         </div>
     </form>
+    <?php 
+        if(isset($_GET['error']))
+        {
+            echo "<div class='alert'>Un problème est survenu (code erreur: ".$_GET['error'].")</div>";
+        }
+
+    ?>
+
 </body>
 </html>
